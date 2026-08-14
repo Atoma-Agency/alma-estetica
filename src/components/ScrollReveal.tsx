@@ -22,7 +22,7 @@ export function ScrollReveal({
   children,
   delay = 0,
   className = '',
-  threshold = 0.12,
+  threshold = 0.1,
   once = true,
   stagger = false,
   staggerInterval = 80,
@@ -50,7 +50,7 @@ export function ScrollReveal({
           setIsVisible(false)
         }
       },
-      { threshold, rootMargin: '0px 0px -40px 0px' },
+      { threshold, rootMargin: '0px 0px -80px 0px' },
     )
 
     observer.observe(node)
@@ -62,11 +62,10 @@ export function ScrollReveal({
     return (
       <div
         ref={ref}
-        className={`transition-all duration-[650ms] ease-[cubic-bezier(0.16,1,0.3,1)] motion-reduce:!translate-y-0 motion-reduce:!opacity-100 ${
-          isVisible
-            ? 'translate-y-0 opacity-100'
-            : 'translate-y-6 opacity-0'
-        } ${className}`}
+        className={`transition-all duration-[900ms] ease-[cubic-bezier(0.22, 1, 0.36, 1)] motion-reduce:!translate-y-0 motion-reduce:!opacity-100 ${isVisible
+          ? 'translate-y-0 opacity-100'
+          : 'translate-y-8 opacity-0'
+          } ${className}`}
         style={{ transitionDelay: delay ? `${delay}ms` : undefined }}
       >
         {children}
@@ -82,11 +81,10 @@ export function ScrollReveal({
       {items.map((child, index) => (
         <div
           key={index}
-          className={`transition-all duration-[650ms] ease-[cubic-bezier(0.16,1,0.3,1)] motion-reduce:!translate-y-0 motion-reduce:!opacity-100 ${
-            isVisible
-              ? 'translate-y-0 opacity-100'
-              : 'translate-y-6 opacity-0'
-          }`}
+          className={`transition-all duration-[900ms] ease-[cubic-bezier(0.22, 1, 0.36, 1)] motion-reduce:!translate-y-0 motion-reduce:!opacity-100 ${isVisible
+            ? 'translate-y-0 opacity-100'
+            : 'translate-y-8 opacity-0'
+            }`}
           style={{
             transitionDelay: `${delay + index * staggerInterval}ms`,
           }}

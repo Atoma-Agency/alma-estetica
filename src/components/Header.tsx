@@ -3,6 +3,7 @@
 import { useState } from "react";
 import Link from "next/link";
 import { Menu, X } from "lucide-react";
+import { HeroEntrance } from "./HeroEntrance";
 
 const navItems = [
   { label: "Tratamientos", href: "#tratamientos" },
@@ -15,7 +16,12 @@ export function Header() {
   const [open, setOpen] = useState(false);
 
   return (
-    <header className="relative mx-auto flex w-full max-w-360 items-center justify-between px-6 py-6 md:px-12 md:py-8">
+    <HeroEntrance
+      as="header"
+      duration={1200}
+      fromY={-8}
+      className="relative z-50 mx-auto flex w-full max-w-360 items-center justify-between px-6 py-6 md:px-12 md:py-8"
+    >
       <Link
         href="/"
         className="font-serif text-xl tracking-tight text-foreground md:text-2xl"
@@ -81,6 +87,6 @@ export function Header() {
           </Link>
         </div>
       )}
-    </header>
+    </HeroEntrance>
   );
 }

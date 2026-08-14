@@ -5,7 +5,7 @@ export function AboutUs() {
   return (
     <section id="el-centro" className="w-full bg-background py-20 md:py-28">
       <div className="mx-auto grid w-full max-w-7xl items-center gap-16 px-6 md:px-12 lg:grid-cols-[520px_1fr] lg:gap-20">
-        <ScrollReveal>
+        <ScrollReveal className="order-2 lg:order-none">
           <div className="relative aspect-3/4 w-full overflow-hidden rounded-lg border border-border sm:rounded-2xl">
             <Image
               src="/images/el-centro.png"
@@ -18,7 +18,7 @@ export function AboutUs() {
           </div>
         </ScrollReveal>
 
-        <ScrollReveal delay={100}>
+        <ScrollReveal delay={100} className="order-1 lg:order-none">
           <div className="max-w-xl lg:py-8">
             <span className="text-xs font-medium uppercase tracking-[0.32em] text-accent">
               Un espacio para ti

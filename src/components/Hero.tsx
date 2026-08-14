@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowUpRight, MapPin } from "lucide-react";
+import { ArrowUpRight } from "lucide-react";
+import { HeroEntrance } from "./HeroEntrance";
 
 export function Hero() {
   return (
@@ -8,23 +9,46 @@ export function Hero() {
       <div className="grid w-full items-center gap-10 lg:grid-cols-[minmax(0,1fr)_minmax(0,1fr)] lg:gap-12">
         {/* Content */}
         <div className="order-2 max-w-xl lg:order-1">
-          <span className="text-xs font-medium uppercase tracking-[0.32em] text-muted-foreground">
+          <HeroEntrance
+            as="span"
+            delay={150}
+            duration={1000}
+            fromY={12}
+            className="block text-xs font-medium uppercase tracking-[0.32em] text-muted-foreground"
+          >
             Estética · Bienestar · Cuidado
-          </span>
+          </HeroEntrance>
 
-          <h1 className="mt-6 font-serif text-4xl font-light leading-none tracking-tight text-balance text-foreground sm:text-5xl lg:mt-7 lg:text-6xl xl:text-7xl">
+          <HeroEntrance
+            as="h1"
+            delay={250}
+            duration={1200}
+            fromY={20}
+            className="mt-6 font-serif text-4xl font-light leading-none tracking-tight text-balance text-foreground sm:text-5xl lg:mt-7 lg:text-6xl xl:text-7xl"
+          >
             Tu piel,
             <br />
             <span className="italic font-normal">tu momento.</span>
-          </h1>
+          </HeroEntrance>
 
-          <p className="mt-6 max-w-md text-base leading-relaxed text-muted-foreground text-pretty">
+          <HeroEntrance
+            as="p"
+            delay={250}
+            duration={400}
+            fromY={16}
+            className="mt-6 max-w-md text-base leading-relaxed text-muted-foreground text-pretty"
+          >
             Tratamientos faciales y corporales diseñados para cuidar de ti,
             realzar tu belleza y convertir cada visita en un momento para
             desconectar.
-          </p>
+          </HeroEntrance>
 
-          <div className="mt-8 flex flex-col gap-4 sm:flex-row sm:items-center">
+          <HeroEntrance
+            delay={350}
+            duration={550}
+            fromY={16}
+            className="mt-8 flex flex-col gap-4 sm:flex-row sm:items-center"
+          >
             <Link
               href="#book"
               className="inline-flex items-center justify-center gap-2 bg-foreground px-8 py-4 text-xs font-medium uppercase tracking-[0.18em] text-primary-foreground transition-opacity hover:opacity-90"
@@ -38,11 +62,17 @@ export function Hero() {
             >
               Descubrir tratamientos
             </Link>
-          </div>
+          </HeroEntrance>
         </div>
 
         {/* Image */}
-        <div className="relative order-1 lg:order-2">
+        <HeroEntrance
+          delay={200}
+          duration={1300}
+          fromY={16}
+          fromScale={1.02}
+          className="relative order-1 lg:order-2"
+        >
           <div
             aria-hidden="true"
             className="absolute inset-3 rounded-tl-[6rem] rounded-tr-3xl rounded-br-[6rem] rounded-bl-3xl border border-accent/35 sm:rounded-tl-[8rem] sm:rounded-br-[8rem] lg:rounded-tl-[11rem] lg:rounded-br-[11rem]"
@@ -58,7 +88,7 @@ export function Hero() {
             />
             <div className="absolute inset-0 bg-white/15" />
           </div>
-        </div>
+        </HeroEntrance>
       </div>
     </section>
   );
