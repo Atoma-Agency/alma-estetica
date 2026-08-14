@@ -4,7 +4,7 @@ import { ArrowUpRight, MapPin } from "lucide-react";
 
 export function Hero() {
   return (
-    <section className="mx-auto w-full max-w-360 px-6 pb-16 md:px-12 md:pb-20 lg:flex lg:min-h-[calc(100svh-7rem)] lg:items-center lg:pb-0">
+    <section className="mx-auto w-full max-w-360 px-6 pb-20 md:px-12 md:pb-28 lg:flex lg:min-h-[calc(100svh-7rem)] lg:items-center lg:pb-0">
       <div className="grid w-full items-center gap-10 lg:grid-cols-[minmax(0,1fr)_minmax(0,1fr)] lg:gap-12">
         {/* Content */}
         <div className="order-2 max-w-xl lg:order-1">

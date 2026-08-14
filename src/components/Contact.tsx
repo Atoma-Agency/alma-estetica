@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { MapPin, Clock, ArrowUpRight } from "lucide-react";
 import type { SVGProps } from "react";
+import { ScrollReveal } from "./ScrollReveal";
 
 function WhatsappIcon(props: SVGProps<SVGSVGElement>) {
   return (
@@ -33,68 +34,73 @@ const details = [
 
 export function Contact() {
   return (
-    <section id="contact" className="w-full bg-background">
-      <div className="mx-auto w-full max-w-360 px-6 py-20 md:px-12 md:py-28">
+    <section id="contacto" className="w-full bg-background py-20 md:py-28">
+      <div className="mx-auto w-full max-w-360 px-6 md:px-12">
         {/* Header */}
-        <div className="mx-auto max-w-2xl md:text-center">
-          <span className="text-xs font-medium uppercase tracking-[0.32em] text-accent">
-            Contacto
-          </span>
-          <h2 className="mt-4 font-serif text-4xl font-light tracking-tight text-balance text-foreground sm:text-5xl md:text-6xl">
-            Tu momento empieza aquí
-          </h2>
-        </div>
-
-        {/* Content grid */}
-        <div className="mt-14 grid items-center gap-10 lg:grid-cols-2 lg:gap-16">
-          {/* Map placeholder */}
-          <div className="relative aspect-4/3 w-full overflow-hidden rounded-2xl border border-border bg-muted">
-            {/* Reemplaza este bloque por tu iframe de Google Maps */}
-            <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2891.870844571754!2d2.1638382759381294!3d41.391390371299394!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12a4a2ed651a4bd5%3A0x153a5a95eda1b4c1!2sP.%C2%BA%20de%20Gracia%2C%2042%2C%20Eixample%2C%2008007%20Barcelona!5e1!3m2!1ses!2ses!4v1786445393152!5m2!1ses!2ses"
-              width="100%"
-              height="100%"
-              style={{ border: 0 }}
-              allowFullScreen
-              loading="lazy"
-              referrerPolicy="strict-origin-when-cross-origin"
-            ></iframe>
-          </div>
-
-          {/* Info */}
-          <div className="max-w-xl">
-            <p className="text-lg leading-relaxed text-pretty text-foreground/90">
+        <ScrollReveal>
+          <div className="mx-auto max-w-2xl text-center">
+            <span className="text-xs font-medium uppercase tracking-[0.32em] text-accent">
+              Contacto
+            </span>
+            <h2 className="mt-4 font-serif text-4xl font-light leading-[1.02] tracking-tight text-balance text-foreground sm:text-5xl lg:text-6xl">
+              Tu momento empieza aquí
+            </h2>
+            <p className="mt-6 text-base leading-relaxed text-muted-foreground text-pretty md:text-lg">
               ¿Lista para dedicarte un poco de tiempo? Visítanos y descubre un
               espacio pensado para cuidar de ti, con tratamientos adaptados a lo
               que necesitas.
             </p>
-
-            <ul className="mt-10 flex flex-col gap-6">
-              {details.map((item, index) => {
-                const Icon = item.icon;
-                return (
-                  <li key={index} className="flex items-center gap-4">
-                    <span className="inline-flex size-11 shrink-0 items-center justify-center rounded-lg bg-secondary text-accent">
-                      <Icon className="size-5" aria-hidden="true" />
-                    </span>
-                    <span className="text-[0.95rem] leading-relaxed text-foreground">
-                      {item.content}
-                    </span>
-                  </li>
-                );
-              })}
-            </ul>
-
-            <div className="mt-10 flex flex-col gap-4 sm:flex-row sm:items-center">
-              <Link
-                href="#book"
-                className="inline-flex items-center justify-center gap-2 bg-foreground px-8 py-4 text-xs font-medium uppercase tracking-[0.18em] text-primary-foreground transition-opacity hover:opacity-90"
-              >
-                Reservar cita
-                <ArrowUpRight className="size-4" aria-hidden="true" />
-              </Link>
-            </div>
           </div>
+        </ScrollReveal>
+
+        {/* Content grid */}
+        <div className="mt-14 grid items-center gap-10 lg:grid-cols-2 lg:gap-16">
+          {/* Map placeholder */}
+          <ScrollReveal>
+            <div className="relative aspect-4/3 w-full overflow-hidden rounded-2xl border border-border bg-muted">
+              {/* Reemplaza este bloque por tu iframe de Google Maps */}
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2891.870844571754!2d2.1638382759381294!3d41.391390371299394!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12a4a2ed651a4bd5%3A0x153a5a95eda1b4c1!2sP.%C2%BA%20de%20Gracia%2C%2042%2C%20Eixample%2C%2008007%20Barcelona!5e1!3m2!1ses!2ses!4v1786445393152!5m2!1ses!2ses"
+                width="100%"
+                height="100%"
+                style={{ border: 0 }}
+                allowFullScreen
+                loading="lazy"
+                referrerPolicy="strict-origin-when-cross-origin"
+              ></iframe>
+            </div>
+          </ScrollReveal>
+
+          {/* Info */}
+          <ScrollReveal delay={100}>
+            <div className="max-w-xl">
+              <ul className="flex flex-col gap-6">
+                {details.map((item, index) => {
+                  const Icon = item.icon;
+                  return (
+                    <li key={index} className="flex items-center gap-4">
+                      <span className="inline-flex size-11 shrink-0 items-center justify-center rounded-lg bg-secondary text-accent">
+                        <Icon className="size-5" aria-hidden="true" />
+                      </span>
+                      <span className="text-[0.95rem] leading-relaxed text-foreground">
+                        {item.content}
+                      </span>
+                    </li>
+                  );
+                })}
+              </ul>
+
+              <div className="mt-10 flex flex-col gap-4 sm:flex-row sm:items-center">
+                <Link
+                  href="#book"
+                  className="inline-flex items-center justify-center gap-2 bg-foreground px-8 py-4 text-xs font-medium uppercase tracking-[0.18em] text-primary-foreground transition-opacity hover:opacity-90"
+                >
+                  Reservar cita
+                  <ArrowUpRight className="size-4" aria-hidden="true" />
+                </Link>
+              </div>
+            </div>
+          </ScrollReveal>
         </div>
       </div>
     </section>
